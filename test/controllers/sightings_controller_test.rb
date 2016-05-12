@@ -18,7 +18,7 @@ class SightingsControllerTest < ActionController::TestCase
 
   test "should create sighting" do
     assert_difference('Sighting.count') do
-      post :create, sighting: {  }
+      post :create, sighting: { day: @sighting.day, latitude: @sighting.latitude, longitude: @sighting.longitude }
     end
 
     assert_redirected_to sighting_path(assigns(:sighting))
@@ -35,7 +35,7 @@ class SightingsControllerTest < ActionController::TestCase
   end
 
   test "should update sighting" do
-    patch :update, id: @sighting, sighting: {  }
+    patch :update, id: @sighting, sighting: { day: @sighting.day, latitude: @sighting.latitude, longitude: @sighting.longitude }
     assert_redirected_to sighting_path(assigns(:sighting))
   end
 
