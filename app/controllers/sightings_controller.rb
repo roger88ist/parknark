@@ -14,7 +14,7 @@ class SightingsController < ApplicationController
 
   # GET /sightings/new
   def new
-    @sighting = Sighting.new
+    @sighting = current_user.sightings.build
   end
 
   # GET /sightings/1/edit
@@ -24,7 +24,7 @@ class SightingsController < ApplicationController
   # POST /sightings
   # POST /sightings.json
   def create
-    @sighting = Sighting.new(sighting_params)
+    @sighting = current_user.sightings.build(sighting_params)
 
     respond_to do |format|
       if @sighting.save
