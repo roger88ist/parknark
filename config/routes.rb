@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root 'sightings#index'
   resources :interest_locations
-  resources :sightings
   resources :sightings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
