@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interest_locations
   resources :sightings
   resources :sightings
   # The priority is based upon order of creation: first created -> highest priority.

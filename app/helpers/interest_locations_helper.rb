@@ -1,0 +1,2 @@
+module InterestLocationsHelper
+end
