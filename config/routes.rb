@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'sightings#index'
   resources :interest_locations
   resources :sightings
