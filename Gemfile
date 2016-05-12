@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'devise', '~> 4.1'
 gem 'hirb', '~> 0.7.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
