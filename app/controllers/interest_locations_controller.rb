@@ -25,7 +25,7 @@ class InterestLocationsController < ApplicationController
   # POST /interest_locations
   # POST /interest_locations.json
   def create
-    @interest_location = InterestLocation.new(interest_location_params)
+    @interest_location = current_user.interest_locations.build(interest_location_params)
 
     respond_to do |format|
       if @interest_location.save
