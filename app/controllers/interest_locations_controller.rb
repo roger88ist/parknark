@@ -1,5 +1,6 @@
 class InterestLocationsController < ApplicationController
   before_action :set_interest_location, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /interest_locations
   # GET /interest_locations.json
@@ -14,7 +15,7 @@ class InterestLocationsController < ApplicationController
 
   # GET /interest_locations/new
   def new
-    @interest_location = InterestLocation.new
+    @interest_location = current_user.interest_locations.build
   end
 
   # GET /interest_locations/1/edit
