@@ -5,7 +5,7 @@ class SightingsController < ApplicationController
   # GET /sightings
   # GET /sightings.json
   def index
-    @sightings = Sighting.all
+    @sightings = current_user.sightings
   end
 
   # GET /sightings/1

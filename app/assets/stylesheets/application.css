@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+#homepage_container {
+	display: inline-flex;
+}
+
+#map {
+	height: 300px;
+	width: 300px;
+	border: 5px solid black;
+	margin-left: 40px;
+}
+
+#sign_in {
+	border: 5px solid red;
+}
