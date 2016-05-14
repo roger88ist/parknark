@@ -39,11 +39,12 @@
 }
 
 #sighting-list {
-	border: 5px solid blue;
+	/*border: 5px solid blue;*/
 	padding: 10px;
 }
 
 #sighting-item {
+/*	border: 5px solid yellow;*/
 	margin-bottom: 10px;
 }
 
@@ -54,7 +55,7 @@
 	border-top-right-radius: 10px;
 }
 
-#delete {
+#sighting-bottom {
 	border-left: 2px solid black ;
 	border-right: 2px solid black;
 	border-bottom: 2px solid black;
@@ -62,8 +63,14 @@
 	border-bottom-right-radius: 10px;
 }
 
+#delete {
+	width: 50px;
+	margin: auto;
+}
 a {
-	margin-left: 70px;
-
+	text-decoration: none;
 }
 
+p.center {
+	text-align: center;
+}

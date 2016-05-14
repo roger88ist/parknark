@@ -12,13 +12,19 @@
                 <p><b>Latitude: </b> <%= sighting.latitude %></p>
                 <p><b>Longitude: </b> <%= sighting.longitude %></p>
               </div>
-              <div id="delete">
-                <%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <div id="sighting-bottom">
+                <div id="delete">
+                  <%= link_to 'Delete', sighting, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
               </div>
             </div>
           <% end %>
 
       </div>
+
+    <p class="center"><%= link_to 'New Sighting', new_sighting_path %><p>
+    <p class="center"><%= link_to 'View Your Locations of Interest', interest_locations_path %></p>
+
   </div>
 
   <div id="map">
@@ -27,9 +33,9 @@
     <p>But when the user enters a new sighting the map will add a marker representing the new sighting entered.</p>
   </div>
 
+
 </div>
 <br>
 
-<p><%= link_to 'New Sighting', new_sighting_path %><p>
-<p><%= link_to 'View Your Locations of Interest', interest_locations_path %></p>
+
 
