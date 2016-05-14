@@ -44,16 +44,26 @@
 }
 
 #sighting-item {
-	border: 3px solid yellow;
 	margin-bottom: 10px;
 }
 
 #sighting-info {
 	padding: 0px 10px;
+	border: 2px solid black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#delete {
+	border-left: 2px solid black ;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 a {
-	margin-left: 75px;
+	margin-left: 70px;
 
 }
 
