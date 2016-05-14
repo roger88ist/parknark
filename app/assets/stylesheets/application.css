@@ -26,6 +26,8 @@
 
 #sign_in, #container-sl {
 	border: 5px solid red;
+	border-radius: 10px;
+	padding: 20px;
 }
 
 #map h1, #map p {
@@ -38,9 +40,20 @@
 
 #sighting-list {
 	border: 5px solid blue;
+	padding: 10px;
 }
 
 #sighting-item {
 	border: 3px solid yellow;
+	margin-bottom: 10px;
+}
+
+#sighting-info {
+	padding: 0px 10px;
+}
+
+a {
+	margin-left: 75px;
+
 }
 

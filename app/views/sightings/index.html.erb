@@ -7,16 +7,17 @@
       <div id="sighting-list">
           <% @sightings.each do |sighting| %>
             <div id="sighting-item">
-              <p><b>Day:</b> <%= sighting.day %></p>
-              <p><b>Latitude: </b> <%= sighting.latitude %></p>
-              <p><b>Longitude: </b> <%= sighting.longitude %></p>
+              <div id="sighting-info">
+                <p><b>Day:</b> <%= sighting.day %></p>
+                <p><b>Latitude: </b> <%= sighting.latitude %></p>
+                <p><b>Longitude: </b> <%= sighting.longitude %></p>
+              </div>
               <div id="delete">
-                <%= link_to 'Show', sighting %>
-                <%= link_to 'Edit', edit_sighting_path(sighting) %>
                 <%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             </div>
           <% end %>
+
       </div>
   </div>
 
