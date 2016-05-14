@@ -5,7 +5,7 @@ class InterestLocationsController < ApplicationController
   # GET /interest_locations
   # GET /interest_locations.json
   def index
-    @interest_locations = InterestLocation.all
+    @interest_locations = current_user.interest_locations
   end
 
   # GET /interest_locations/1
