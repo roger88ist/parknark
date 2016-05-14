@@ -15,19 +15,17 @@
         </tr>
       </thead>
 
-      <tbody>
-        <% @sightings.each do |sighting| %>
-          <tr>
-            <td><%= sighting.day %></td>
-            <td><%= sighting.latitude %></td>
-            <td><%= sighting.longitude %></td>
-            <td><%= sighting.user.email %></td>
-            <td><%= link_to 'Show', sighting %></td>
-            <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
-            <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
+      <div id="sighting-list">
+          <% @sightings.each do |sighting| %>
+            <p><b>Day:</b> <%= sighting.day %></p>
+            <p><b>Latitude: </b> <%= sighting.latitude %></p>
+            <p><b>Longitude: </b> <%= sighting.longitude %></p>
+              <td><%= link_to 'Show', sighting %></td>
+              <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
+              <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+      </div>
     </table>
   </div>
 
