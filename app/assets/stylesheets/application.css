@@ -35,3 +35,12 @@
 #map p {
 	font-size: 20px;
 }
+
+#sighting-list {
+	border: 5px solid blue;
+}
+
+#sighting-item {
+	border: 3px solid yellow;
+}
+
