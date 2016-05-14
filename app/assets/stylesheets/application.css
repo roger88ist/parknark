@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-#homepage_container {
+#homepage_container, #container-s {
 	display: inline-flex;
 }
 
@@ -24,6 +24,14 @@
 	margin-left: 40px;
 }
 
-#sign_in {
+#sign_in, #container-sl {
 	border: 5px solid red;
+}
+
+#map h1, #map p {
+	text-align: center;
+}
+
+#map p {
+	font-size: 20px;
 }
