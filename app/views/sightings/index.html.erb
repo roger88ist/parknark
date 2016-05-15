@@ -1,41 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<div id="container-s">
-  <div id="container-sl">
-    <h1>Your Sightings:</h1>
+<div id="storefront">
+  <div id="signimage">
+    <div id="siteform">
+      <!-- BUTTTON -->
+      <h1> PARK NARK </h1>
+      <div class="ticket-button">
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= link_to("Sign UP", new_user_registration_path) %>
+        <%= link_to("Sign IN", new_user_session_path) %>
+        <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
+
+
+    <span class="flex-item" id="ticketstandard">
+    Your Sightings:
+  </span>
+    <span id="ticketstandard">
+      Before User signs in
+  </span>
+  <!-- BUTTTON -->
+</div>
+
+    <!-- <div id="separation"></div> -->
+    <!-- MAP -->
+    <div id="">
+      <div id="map"></div>
+      <p style="display:flex;justify-content: center;">
+        <span><%= link_to 'New Sighting', new_sighting_path %></span>
+        <span><%= link_to 'New User', new_user_session_path %></span>
+      </p>
+    </div>
+
+
+        <table style="display:flex;justify-content: center;">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th><%= link_to 'View Your Locations of Interest', interest_locations_path %></th>
+            <th>Notifications</th>
+            <th>User</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
       <div id="sighting-list">
           <% @sightings.each do |sighting| %>
-            <div id="sighting-item">
-              <div id="sighting-info">
-                <p><b>Day:</b> <%= sighting.day %></p>
-                <p><b>Latitude: </b> <%= sighting.latitude %></p>
-                <p><b>Longitude: </b> <%= sighting.longitude %></p>
-              </div>
-              <div id="sighting-bottom">
-                <div id="delete">
-                  <%= link_to 'Delete', sighting, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-              </div>
-            </div>
+            <p><b>Day:</b> <%= sighting.day %></p>
+            <p><b>Latitude: </b> <%= sighting.latitude %></p>
+            <p><b>Longitude: </b> <%= sighting.longitude %></p>
+              <td><%= link_to 'Show', sighting %></td>
+              <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
+              <td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
           <% end %>
-
       </div>
-
-    <p class="center"><%= link_to 'New Sighting', new_sighting_path %><p>
-    <p class="center"><%= link_to 'View Your Locations of Interest', interest_locations_path %></p>
-
+    </table>
   </div>
+</div>
 
-  <div id="map">
-    <h1>MAP GOES HERE</h1>
-    <p>This map is the same map as the homepage map.</p>
-    <p>But when the user enters a new sighting the map will add a marker representing the new sighting entered.</p>
-  </div>
 
 
 </div>
 <br>
-
-
-

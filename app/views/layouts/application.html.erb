@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DeviseAttempt</title>
+  <title>Park_Nark</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-       <%= link_to("Sign UP", new_user_registration_path) %>
-       <%= link_to("Sign IN", new_user_session_path) %>
-       <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
 
 <%= yield %>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAx8ksngVV5zNPHyB9WEGLX2ZPFH55zYc&callback=initMap"
+type="text/javascript"></script>
 </body>
 </html>

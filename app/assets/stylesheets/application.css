@@ -13,64 +13,175 @@
  *= require_tree .
  *= require_self
  */
+ /*html  {
+	height:100%;
+}*/
+#siteform {
+justify-content: center;
+text-align: center;
+color: #530000;
+
+  padding: 16% 0px 0px 0px;
+}
+
+#storefront {
+	height: 100%;
+}
+
+.ticket-button {
+	display: flex;
+  justify-content: center;
+  position: relative;
+  top: 36px;
+  margin-bottom: 36px;
+}
+
+#ticketstandard{
+	background-size: 100%, 100%;
+  font-family: 'Avenir Next LT Pro Heavy Condensed',verdana, arial, helvetica, sans-serif !important;
+  font-size: 13px;
+  color: #530000;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 18px;
+  width: fit-content;
+	font-size: 18px;
+}
+
+
+
+#map_custom{
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  border-radius: 10px;
+}
+
+
+
+#separation {
+	height: 2.6em;
+	width: auto;
+}
+
+#map {
+	border: 5px solid #530000;
+	border-radius: 10px;
+	width: 300px;
+	height: 60vh;
+	margin: auto;
+
+}
+
+#signimage{
+	background-image: url('signbackgroundimage.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+	font-family: 'Avenir Next LT Pro Heavy Condensed',verdana, arial, helvetica, sans-serif !important;
+}
+
 #homepage_container, #container-s {
 	display: inline-flex;
 }
 
 #map {
-	height: 300px;
+	border: 5px solid #530000;
+	border-radius: 10px;
 	width: 300px;
-	border: 5px solid black;
-	margin-left: 40px;
+	height: 47vh;
+	margin: auto;
 }
 
 #sign_in, #container-sl {
 	border: 5px solid red;
-	border-radius: 10px;
-	padding: 20px;
 }
 
 #map h1, #map p {
 	text-align: center;
 }
 
+
+a, h1, h2	{
+	text-align: center;
+}
 #map p {
 	font-size: 20px;
 }
 
-#sighting-list {
-	/*border: 5px solid blue;*/
-	padding: 10px;
+@font-face {
+font-family: 'Avenir Next LT Pro Heavy Condensed';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir Next LT Pro Heavy Condensed'), url('AvenirNextLTPro-HeavyCn.woff') format('woff');
+}
+@font-face {
+font-family: 'Avenir Next LT Pro Heavy Condensed';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir Next LT Pro Heavy Condensed'), url('AvenirNextLTPro-HeavyCn.woff') format('woff');
 }
 
-#sighting-item {
-/*	border: 5px solid yellow;*/
-	margin-bottom: 10px;
+/*background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+html{
+	background-image: url("/assets/storefront.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-#sighting-info {
-	padding: 0px 10px;
-	border: 2px solid black;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+
+@media screen and (max-width: 1900px) {
+	#signimage {
+		width: 375px;
+		height: 96vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+		/*body {
+			width: 100%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}*/
+}
+ul {
+	list-style: none;
+	font-size: 40px;
+	font-weight: bold;
+	margin-left: 30px;
 }
 
-#sighting-bottom {
-	border-left: 2px solid black ;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
+li {
+	padding: 20px;
 }
-
-#delete {
-	width: 50px;
-	margin: auto;
-}
-a {
-	text-decoration: none;
-}
-
-p.center {
-	text-align: center;
+/*Ipad 768 x1024
+ip 6 plius414 x 736
+Nexus 411 x 731
+ip 6 375 x 667
+Galaxy 360 x 640
+Iphone 5 320 x 568*/
+	@media screen and (max-width: 380px) {
+	#signimage {
+		width: 100%;
+		height: 96vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#map {
+		border: 2px solid #530000;
+		border-radius: 10px;
+		width: 80%;
+		height: 40vh;
+	}
+		/*body {
+			width: 100%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}*/
 }

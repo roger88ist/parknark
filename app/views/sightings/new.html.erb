@@ -1,5 +1,17 @@
-<h1>New Sighting</h1>
+<div id="storefront">
+<div id="signimage">
+<div id="siteform">
+1
+<h1 style="display:flex;justify-content: center;">New Sighting</h1>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= link_to("Sign UP", new_user_registration_path) %>
+<%= link_to("Sign IN", new_user_session_path) %>
+<%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', sightings_path %>
+</div>
+</div>
+</div>
