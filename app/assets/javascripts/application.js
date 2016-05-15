@@ -16,31 +16,36 @@
 //= require_tree .
 var map;
 function initMap() {
-       var map = new google.maps.Map(document.getElementById('map'), {zoom: 8});
-       var geocoder = new google.maps.Geocoder;
-       geocoder.geocode({'address': 'Miami'}, function(results, status) {
-         if (status === google.maps.GeocoderStatus.OK) {
-           map.setCenter(results[0].geometry.location);
-           new google.maps.Marker({
-             map: map,
-             position: results[0].geometry.location
-           });
-         } else {
-           window.alert('Geocode was not successful for the following reason: ' +
-               status);
-         }
-       });
-     }
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 25.7742657, lng: -80.1936589},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
 
-function detectBrowser() {
-  var useragent = navigator.userAgent;
-  var mapdiv = document.getElementById("map");
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+        };
 
-  if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
-    mapdiv.style.width = '100%';
-    mapdiv.style.height = '100%';
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('YOU ARE HERE');
+      map.setCenter(pos);
+      map.setZoom(15);
+      }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
   } else {
-    mapdiv.style.width = '600px';
-    mapdiv.style.height = '800px';
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
 }
