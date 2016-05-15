@@ -14,6 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function initGeolocation() {
+  if( navigator.geolocation ) {
+     // Call getCurrentPosition with success and failure callbacks
+     navigator.geolocation.getCurrentPosition( success, fail );
+  }
+  else {
+     alert("Sorry, your browser does not support geolocation services.");
+  }
+}
+
+
+function success(position){
+  $("input#lat").val(position.coords.latitude);
+  $("input#long").val(position.coords.longitude);
+}
+function fail() {
+// Could not obtain location
+}
+
 var map;
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -33,7 +53,8 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('YOU ARE HERE');
       map.setCenter(pos);
-      map.setZoom(15);
+      map.setZoom(19);
+      map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
       }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
