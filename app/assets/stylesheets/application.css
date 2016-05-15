@@ -19,7 +19,7 @@
 #siteform {
 justify-content: center;
 text-align: center;
-color: #530000;
+color: #730001;
 
   padding: 16% 0px 0px 0px;
 }
@@ -65,7 +65,7 @@ color: #530000;
 }
 
 #map {
-	border: 5px solid #530000;
+	border: 5px solid #730001;
 	border-radius: 10px;
 	width: 300px;
 	height: 60vh;
@@ -74,7 +74,7 @@ color: #530000;
 }
 
 #signimage{
-	background-image: url('signbackgroundimage.png');
+	background-image: url('signbackgroundimage2.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 	font-family: 'Avenir Next LT Pro Heavy Condensed',verdana, arial, helvetica, sans-serif !important;
@@ -85,7 +85,7 @@ color: #530000;
 }
 
 #map {
-	border: 5px solid #530000;
+	border: 5px solid #730001;
 	border-radius: 10px;
 	width: 300px;
 	height: 47vh;
