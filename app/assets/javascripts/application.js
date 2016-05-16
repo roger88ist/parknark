@@ -33,12 +33,14 @@ function fail() {
 // Could not obtain location
 }
 
+
 var map;
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 25.7742657, lng: -80.1936589},
     zoom: 6
   });
+
   var infoWindow = new google.maps.InfoWindow({map: map});
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
