@@ -25,7 +25,6 @@ function initGeolocation() {
   }
 }
 
-
 function success(position){
   $("input#lat").val(position.coords.latitude);
   $("input#long").val(position.coords.longitude);
@@ -41,11 +40,9 @@ function initMap() {
     zoom: 6
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
-
-  // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+        var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
         };
@@ -53,8 +50,8 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('YOU ARE HERE');
       map.setCenter(pos);
-      map.setZoom(19);
-      map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+      map.setZoom(17);
+      map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
       }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
