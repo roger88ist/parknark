@@ -5,7 +5,10 @@
     <div id="siteform">
       <p id="notice"><%= notice %></p>
       <!-- BUTTTON -->
-      <h1> PARK NARK </h1>
+    <!-- 375x39 -->
+      <!-- <h1> PARK NARK </h1> -->
+      <a href="/pictures"><img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="320px" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block">
+</a>
       <div class="ticket-button">
           <span class="flex-item" id="ticketstandard">
         <p class="notice"><%= notice %></p>
@@ -14,6 +17,7 @@
         <%= link_to("Sign IN", new_user_session_path) %>
         <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
           </span>
+
 
 
         <!-- <span id="ticketstandard">
@@ -26,10 +30,20 @@
     <!-- MAP -->
     <div id="">
       <div id="map"></div>
+      <div style="height:90px;width:300px;margin-left: auto ;
+  margin-right: auto ; border:5px solid; border-color: #730001;border-radius: 10px;font:16px/26px 'Avenir Next LT Pro Heavy Condensed', Georgia, Garamond, Serif;overflow:auto;">
       <p style="display:flex;justify-content: center;">
+        <h1>NYO!</h1>
+          <h1>NYO!</h1>
+            <h1>NYO!</h1>
+              <h1>NYO!</h1>
+                <h1>NYO!</h1>
+                  <h1>NYO!</h1>
+                    <h1>NYO!</h1>
         <span><%= link_to 'New Sighting', new_sighting_path %></span>
         <!-- <span><%= link_to 'New User', new_user_session_path %></span> -->
       </p>
+        </div>
     </div>
 
 

@@ -21,7 +21,7 @@ justify-content: center;
 text-align: center;
 color: #730001;
 
-  padding: 16% 0px 0px 0px;
+  padding: 5% 0px 0px 0px;
 }
 
 #storefront {
@@ -103,6 +103,7 @@ color: #730001;
 
 a, h1, h2	{
 	text-align: center;
+	text-decoration: none;
 }
 #map p {
 	font-size: 20px;
