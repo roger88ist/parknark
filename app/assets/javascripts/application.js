@@ -23,6 +23,7 @@ function initGeolocation() {
   else {
      alert("Sorry, your browser does not support geolocation services.");
   }
+
 }
 
 function success(position){
@@ -69,3 +70,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
+
+$(document).on("ready page:load", initGeolocation);
