@@ -1,56 +1,51 @@
 <div id="storefront">
   <div id="signimage">
     <div id="siteform">
-<h2>Log in</h2>
+      
+
+      <h1 class="green">Log in</h1>
+      <h2 class="green">Sign Up to Receive Notifications</h2>
+
+      <div id="map">
+      </div>
+
+          <div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              </th>
+              <th>  <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %>
+              </div>
 
 
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+            </th>
+            <th>
+              <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+              <% end -%>
+            </th>
+            <th>
+              <div class="actions">
+                <%= f.submit "Log in" %>
+              </div>
+              <% end %>
+            </th>
+            <th>
+              <%= render "devise/shared/links" %>
+            </th>
+          </tr>
+          </div>
+      </thead>
+    </table>
 
-    <!-- <h2>Sign Up to Receive Notifications</h2> -->
 
-    <div id="map">
   </div>
-
-
-
-      <table style="display:flex;justify-content: center;">
-  <thead>
-    <tr>
-      <th>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  </th>
-    <th>  <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-
-
-    <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-    </th>
-<th>
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
-</th>
-<th>
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
-</th>
-<th>
-    <%= render "devise/shared/links" %>
-  </th>
-  </tr>
-  </thead>
-</table>
-
-
 </div>
-  </div>
 </div>

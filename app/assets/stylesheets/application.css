@@ -16,6 +16,14 @@
  /*html  {
 	height:100%;
 }*/
+
+div.temp-sightings-index{
+	height: 300px;
+	width: 300px;
+	border: 5px solid black;
+	margin: auto;
+}
+
 #siteform {
 justify-content: center;
 text-align: center;

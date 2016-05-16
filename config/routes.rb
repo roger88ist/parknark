@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users do
     # get '/users/sign_out' => 'devise/sessions#destroy'
+    # get '/' => 'devise/sessions#new'
   end
+
   root 'sightings#index'
   resources :interest_locations
   resources :sightings

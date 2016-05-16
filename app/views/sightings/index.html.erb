@@ -1,79 +1,52 @@
-<!-- <p id="notice"><%= notice %></p> -->
 
 <div id="storefront">
   <div id="signimage">
     <div id="siteform">
+
       <p id="notice"><%= notice %></p>
-      <!-- BUTTTON -->
-    <!-- 375x39 -->
-      <!-- <h1> PARK NARK </h1> -->
-      <a href="/pictures"><img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="320px" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block">
-</a>
+      <img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="320px" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block"><br>
+
+      <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
       <div class="ticket-button">
-          <span class="flex-item" id="ticketstandard">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= link_to("Sign UP", new_user_registration_path) %>
-        <%= link_to("Sign IN", new_user_session_path) %>
-        <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
-          </span>
+        <!-- <span class="flex-item" id="ticketstandard">   -->
+          <p class="alert"><%= alert %></p>
+        <!-- </span> -->
+      </div>
 
+      <div class="temp-sightings-index">
+        <!-- Delete this div once the appropriate map has been created. -->
+        <!-- check comments below for details on appropriate map -->
+        <h1>MAP GOES HERE</h1>
+        <h5>* Pins will be displayed in this map</h5>
+        <h5>* Each pin represents each instance of the current user's History</h5>
+        <h5>* In other words, a history displayed with Pins</h5>
+        <p>When this map is generated, we switch this temporary div with the  approapriate map</p>
+        <p>This is the views/sightings/index file</p>
+      </div>
 
+      <div>
+        <!-- Rogerio commented out the map until the right map gets created -->
+        <!-- this means a map that displays all the current user's sighting history -->
+        <!-- via pins on the map -->
+        <!-- <div id="map"></div> -->
 
-        <!-- <span id="ticketstandard">
-        Before User signs in
-      </span> -->
-      <!-- BUTTTON -->
+          <p><%= link_to 'New Sighting', new_sighting_path %></p>
+          <p><%= link_to 'View Your Points of Interest', interest_locations_path %></p>
+      </div>
+
     </div>
-
-    <!-- <div id="separation"></div> -->
-    <!-- MAP -->
-    <div id="">
-      <div id="map"></div>
-      <div style="height:90px;width:300px;margin-left: auto ;
-  margin-right: auto ; border:5px solid; border-color: #730001;border-radius: 10px;font:16px/26px 'Avenir Next LT Pro Heavy Condensed', Georgia, Garamond, Serif;overflow:auto;">
-      <p style="display:flex;justify-content: center;">
-        <h1>NYO!</h1>
-          <h1>NYO!</h1>
-            <h1>NYO!</h1>
-              <h1>NYO!</h1>
-                <h1>NYO!</h1>
-                  <h1>NYO!</h1>
-                    <h1>NYO!</h1>
-        <span><%= link_to 'New Sighting', new_sighting_path %></span>
-        <!-- <span><%= link_to 'New User', new_user_session_path %></span> -->
-      </p>
-        </div>
-    </div>
-
-
-    <!-- <table style="display:flex;justify-content: center;">
-    <thead>
-    <tr>
-    <th>Day</th>
-    <th><%= link_to 'View Your Locations of Interest', interest_locations_path %></th>
-    <th>Notifications</th>
-    <th>User</th>
-    <th colspan="3"></th>
-  </tr>
-</thead> -->
-
-<!-- <div id="sighting-list">
-<% @sightings.each do |sighting| %>
-<p><b>Day:</b> <%= sighting.day %></p>
-<p><b>Latitude: </b> <%= sighting.latitude %></p>
-<p><b>Longitude: </b> <%= sighting.longitude %></p>
-<td><%= link_to 'Show', sighting %></td>
-<td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
-<td><%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
-<% end %>
-</div> -->
-</table>
-</div>
+  </div>
 </div>
 
-
-
+<!-- The below div will be deleted once the appropriate map is created for this page -->
+<div>
+  <h1>Once the appropriate map is created DELETE ME! (I AM A DIV)</h1>
+  <% @sightings.each do |sighting| %>
+    <p><b>Day:</b> <%= sighting.day %></p>
+    <p><b>Latitude: </b> <%= sighting.latitude %></p>
+    <p><b>Longitude: </b> <%= sighting.longitude %></p>
+    <td><%= link_to 'Show', sighting %></td>
+    <td><%= link_to 'Edit', edit_sighting_path(sighting) %></td>
+    <%= link_to 'Destroy', sighting, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
-<br>
