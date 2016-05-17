@@ -11,6 +11,7 @@ class SightingsController < ApplicationController
   # GET /sightings/1
   # GET /sightings/1.json
   def show
+    redirect_to sightings_path
   end
 
   # GET /sightings/new
@@ -36,6 +37,8 @@ class SightingsController < ApplicationController
         format.json { render json: @sighting.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
 
   # PATCH/PUT /sightings/1

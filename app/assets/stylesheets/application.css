@@ -17,6 +17,16 @@
 	height:100%;
 }*/
 
+
+h1.green {
+	margin-top: 50px;
+	margin-bottom: -20px;
+}
+
+.green {
+	color: #009900;
+}
+
 div.signin-bottom {
 	display: flex;
 	justify-content: space-between;
@@ -25,6 +35,17 @@ div.signin-bottom {
 div.signin-bottom-l {
 	margin-top: 10px;
 	margin-left: 35px;
+}
+
+div.signin-bottom-l div:nth-child(3) {
+	background-color: #009900;
+	border-radius: 5px;
+	padding-top: 4px;
+	width: 125px;
+}
+
+div.signin-bottom-l div:nth-child(3) label {
+	color: white;
 }
 
 div.signin-signup {
@@ -113,15 +134,6 @@ color: #730001;
 	width: auto;
 }
 
-#map {
-	border: 5px solid #730001;
-	border-radius: 10px;
-	width: 300px;
-	height: 60vh;
-	margin: auto;
-
-}
-
 #signimage{
 	background-image: url('signbackgroundimage2.png');
   background-repeat: no-repeat;
@@ -134,7 +146,7 @@ color: #730001;
 }
 
 #map {
-	border: 5px solid #730001;
+	border: 5px solid black;
 	border-radius: 10px;
 	width: 300px;
 	height: 47vh;

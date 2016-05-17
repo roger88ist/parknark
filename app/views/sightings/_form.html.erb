@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :latitude %><br>
-    <%= f.text_field :latitude, :id => "lat" %>
+    <%= f.text_field :latitude, :id => "lat", :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :longitude%><br>
-    <%= f.text_field :longitude, :id => "long"  %>
+    <%= f.text_field :longitude, :id => "long", :readonly => true  %>
   </div>
   <div class="actions">
     <%= f.submit %>
