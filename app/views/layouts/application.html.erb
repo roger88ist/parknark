@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
-<body onload='initGeolocation()'>
+<body>
 
 <%= yield %>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBV6NJd2AMZKq9NA6WBV-CeW-KFVTY5l0&callback=initMap"
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBV6NJd2AMZKq9NA6WBV-CeW-KFVTY5l0&callback=initMap"
 type="text/javascript"></script>
 </body>
 </html>
