@@ -34,35 +34,73 @@ function fail() {
 // Could not obtain location
 }
 
+// var arrayOfPoints = [[25.8011413, -80.20221270000002],
+//     [25.79959719999999, -80.19922609999998]];
+// var convertPoints = [];
+
+// var locations = [{lat: 25.8011413, lng: -80.20221270000002},{lat:25.79959719999999 , lng: -80.19922609999998}];
+
+var final = [];
+
+if (gon.array_of_cor != undefined ) {
+  for (var i = 0; i < gon.array_of_cor.length; i++) {
+    var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
+    final.push(result);
+  }
+}
+
 
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 25.7742657, lng: -80.1936589},
-    zoom: 6
+    center: final[0],
+    zoom: 17,
   });
 
-  var infoWindow = new google.maps.InfoWindow({map: map});
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-        };
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('YOU ARE HERE');
-      map.setCenter(pos);
-      map.setZoom(17);
-      map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
-      }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+  var markers = [];
+
+  for (i = 0; i < final.length; i++) {
+    var marker = new google.maps.Marker({
+     position: final[i],
+     map: map,
     });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
+    markers.push(marker);
   }
+
+  // var marker = new google.maps.Marker({
+  //   position: theLab,
+  //   map: map,
+  // });
+
+  // var markerFreshii = new google.maps.Marker({
+  //   position: freshii,
+  //   map: map,
+  // });
 }
+
+  // var infoWindow = new google.maps.InfoWindow({map: map});
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //       var pos = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude,
+  //       lat: 
+  //       };
+
+  //     // infoWindow.setPosition(pos);
+  //     // infoWindow.setContent('YOU ARE HERE');
+  //     map.setCenter(pos);
+  //     map.setZoom(15);
+  //     map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+  //     }, function() {
+  //     handleLocationError(true, infoWindow, map.getCenter());
+  //   });
+  // } else {
+  //   // Browser doesn't support Geolocation
+  //   handleLocationError(false, infoWindow, map.getCenter());
+  // }
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
