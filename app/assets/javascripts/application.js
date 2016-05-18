@@ -30,6 +30,7 @@ function success(position){
   $("input#lat").val(position.coords.latitude);
   $("input#long").val(position.coords.longitude);
 }
+
 function fail() {
 // Could not obtain location
 }
@@ -42,21 +43,19 @@ function fail() {
 
 var final = [];
 
-if (gon.array_of_cor != undefined ) {
-  for (var i = 0; i < gon.array_of_cor.length; i++) {
-    var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
-    final.push(result);
-  }
-}
 
+for (var i = 0; i < gon.array_of_cor.length; i++) {
+  var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
+  final.push(result);
+}
 
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-    center: final[0],
+    // center: final[0],
     zoom: 17,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
   });
-
 
   var markers = [];
 
@@ -68,16 +67,15 @@ function initMap() {
     markers.push(marker);
   }
 
-  // var marker = new google.maps.Marker({
-  //   position: theLab,
-  //   map: map,
-  // });
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(initialLocation);
+    });
+  }
 
-  // var markerFreshii = new google.maps.Marker({
-  //   position: freshii,
-  //   map: map,
-  // });
 }
+
 
   // var infoWindow = new google.maps.InfoWindow({map: map});
   // if (navigator.geolocation) {
