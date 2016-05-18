@@ -7,13 +7,19 @@
       <p class="alert"><%= alert %></p>
 
       <h1 class="user-signed-in">ParkNark</h1>
-
-      <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
+      <p><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
 
       <div id="map"></div>
 
-      <p><%= link_to 'New Sighting', new_sighting_path %></p>
-      <p><%= link_to 'View Your Points of Interest', interest_locations_path %></p>
+      <div class="sightings-bottom">
+        <div class="sightings-b-l">
+          <p><%= link_to 'New Sighting', new_sighting_path %></p>
+        </div>
+        
+        <div class="sightings-b-r">
+          <p><%= link_to 'View Your Points of Interest', interest_locations_path %></p>
+        </div>
+      </div>
 
     </div>
   </div>

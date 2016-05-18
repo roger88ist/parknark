@@ -1,7 +1,6 @@
 class SightingsController < ApplicationController
   before_action :set_sighting, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_filter -> { gon.clear }
 
   # GET /sightings
   # GET /sightings.json

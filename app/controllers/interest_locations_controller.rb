@@ -1,7 +1,6 @@
 class InterestLocationsController < ApplicationController
   before_action :set_interest_location, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_filter -> { gon.clear }
 
   # GET /interest_locations
   # GET /interest_locations.json

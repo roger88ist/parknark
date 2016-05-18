@@ -25,8 +25,6 @@
               <td><%= interest_location.latitude %></td>
               <td><%= interest_location.longitude %></td>
               <td><%= interest_location.radius %></td>
-              <td><%= link_to 'Show', interest_location %></td>
-              <td><%= link_to 'Edit', edit_interest_location_path(interest_location) %></td>
               <td><%= link_to 'Destroy', interest_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
