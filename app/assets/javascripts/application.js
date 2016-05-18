@@ -37,18 +37,6 @@
 // Could not obtain location
   }
 
-  // var final = [];
-
-  // var translate = gon.array_of_cor
-
-  // if (translate === "none") {
-  //   console.log("Array of Coordinates is Zero");
-  // } else {
-  //   for (var i = 0; i < gon.array_of_cor.length; i++) {
-  //     var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
-  //     final.push(result);
-  //   }
-  // }
 
   var map;
   function initMap() {

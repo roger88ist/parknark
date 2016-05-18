@@ -14,6 +14,7 @@ class InterestLocationsController < ApplicationController
   # GET /interest_locations/1
   # GET /interest_locations/1.json
   def show
+    redirect_to interest_locations_path
   end
 
   # GET /interest_locations/new
