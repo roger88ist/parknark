@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'devise', '~> 4.1'
 gem 'hirb', '~> 0.7.3'

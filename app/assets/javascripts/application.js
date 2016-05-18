@@ -15,7 +15,11 @@
 //= require turbolinks
 //= require jquery-readyselector
 //= require_tree .
+
+console.log(gon.array_of_cor)
+
 function ready() { 
+  console.log("READY" + gon.array_of_cor)
   
   initGeolocation();
   // initMap();

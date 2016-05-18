@@ -1,14 +1,14 @@
 class InterestLocationsController < ApplicationController
   before_action :set_interest_location, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_filter -> { gon.clear }
 
   # GET /interest_locations
   # GET /interest_locations.json
   def index
     @interest_locations = current_user.interest_locations
-    gon.array_of_cor = @interest_locations.map do |element|
-      [element.latitude, element.longitude]
-    end
+    gon.array_of_cor = InterestLocation.get_cordinates(@interest_locations)
+    gon.poop = false
   end
 
   # GET /interest_locations/1

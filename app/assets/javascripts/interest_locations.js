@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$( document ).ready(function() {
+// $( document ).ready(function() {
     
   // function initGeolocation() {
   //   if( navigator.geolocation ) {
@@ -19,4 +19,4 @@ $( document ).ready(function() {
   // }
 
     
-});
+// });
