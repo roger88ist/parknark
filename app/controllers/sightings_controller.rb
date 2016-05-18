@@ -5,15 +5,8 @@ class SightingsController < ApplicationController
   # GET /sightings
   # GET /sightings.json
   def index
-    @all = Sighting.all
     @sightings = current_user.sightings
     gon.array_of_cor = Sighting.get_cordinates(@sightings)
-    puts "======="
-    puts @all.count
-    puts "======="
-    puts "*******"
-    puts @sightings.count
-    puts "*******"
   end
 
   # GET /sightings/1

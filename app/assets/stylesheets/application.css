@@ -17,7 +17,8 @@
 	height:100%;
 }*/
 
-
+/*CSS CODE FOR HOMPAGE SYTLING*/
+/*----------------------------*/
 h1.green {
 	margin-top: 50px;
 	margin-bottom: -20px;
@@ -85,6 +86,17 @@ div.temp-sightings-index{
 	border: 5px solid black;
 	margin: auto;
 }
+/*------------------------*/
+/*END OF HOMPAGE STYLING*/
+
+
+/*CSS CODE FOR USER HOMEPAGE SYTLING*/
+/*----------------------------*/
+h1.user-signed-in {
+	margin-top: 30px;
+}
+/*------------------------*/
+/*END OF USER HOMEPAGE STYLING*/
 
 #siteform {
 justify-content: center;

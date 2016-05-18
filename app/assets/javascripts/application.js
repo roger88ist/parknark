@@ -14,67 +14,75 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// $(document).ready(function() { 
 
-function initGeolocation() {
-  if( navigator.geolocation ) {
+
+  function initGeolocation() {
+    if( navigator.geolocation ) {
      // Call getCurrentPosition with success and failure callbacks
      navigator.geolocation.getCurrentPosition( success, fail );
-  }
-  else {
+   }
+    else {
      alert("Sorry, your browser does not support geolocation services.");
+    }
+
+  }    
+
+  function success(position){
+    $("input#lat").val(position.coords.latitude);
+    $("input#long").val(position.coords.longitude);
   }
 
-}
-
-function success(position){
-  $("input#lat").val(position.coords.latitude);
-  $("input#long").val(position.coords.longitude);
-}
-
-function fail() {
+  function fail() {
 // Could not obtain location
-}
+  }
 
-// var arrayOfPoints = [[25.8011413, -80.20221270000002],
-//     [25.79959719999999, -80.19922609999998]];
-// var convertPoints = [];
+  // var final = [];
 
-// var locations = [{lat: 25.8011413, lng: -80.20221270000002},{lat:25.79959719999999 , lng: -80.19922609999998}];
+  // var translate = gon.array_of_cor
 
-var final = [];
+  // if (translate === "none") {
+  //   console.log("Array of Coordinates is Zero");
+  // } else {
+  //   for (var i = 0; i < gon.array_of_cor.length; i++) {
+  //     var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
+  //     final.push(result);
+  //   }
+  // }
 
-
-for (var i = 0; i < gon.array_of_cor.length; i++) {
-  var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
-  final.push(result);
-}
-
-var map;
-function initMap() {
+  var map;
+  function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
     // center: final[0],
-    zoom: 17,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-  });
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
 
-  var markers = [];
+    var final = [];
 
-  for (i = 0; i < final.length; i++) {
-    var marker = new google.maps.Marker({
-     position: final[i],
-     map: map,
+    for (var i = 0; i < gon.array_of_cor.length; i++) {
+      var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
+      final.push(result);
+    }
+
+
+    var markers = [];
+
+    for (i = 0; i < final.length; i++) {
+      var marker = new google.maps.Marker({
+      position: final[i],
+      map: map,
     });
     markers.push(marker);
-  }
+    }
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         map.setCenter(initialLocation);
-    });
+      });
+    }
   }
-
-}
 
 
   // var infoWindow = new google.maps.InfoWindow({map: map});
@@ -100,11 +108,11 @@ function initMap() {
   // }
 
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-}
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
+  }
 
 $(document).on("ready page:load", initGeolocation);

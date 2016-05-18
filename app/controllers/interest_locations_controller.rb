@@ -6,6 +6,9 @@ class InterestLocationsController < ApplicationController
   # GET /interest_locations.json
   def index
     @interest_locations = current_user.interest_locations
+    gon.array_of_cor = @interest_locations.map do |element|
+      [element.latitude, element.longitude]
+    end
   end
 
   # GET /interest_locations/1
