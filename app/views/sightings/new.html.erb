@@ -7,7 +7,8 @@
 			<p class="alert"><%= alert %></p>
 			<%#= link_to("Sign UP", new_user_registration_path) %>
 			<%#= link_to("Sign IN", new_user_session_path) %>
-			<%= link_to("Sign OUT", destroy_user_session_path, :method => :get) %>
+			<p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+
 			<br><br>
 			<%= render 'form' %>
 
