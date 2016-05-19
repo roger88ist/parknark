@@ -16,13 +16,27 @@
       </div>
 
       <div class="sightings-bottom">
+ 
         <div class="sightings-b-l">
-          <p><%= link_to 'New Sighting', new_sighting_path %></p>
+          <div class="link">
+            <p><%= link_to 'Report a Sighting', new_sighting_path %></p>
+          </div>
+          <div class="footer">
+            <p>TO SEND ALERTS</p>
+          </div>
         </div>
+
         
         <div class="sightings-b-r">
-          <p><%= link_to 'View Your Points of Interest', interest_locations_path %></p>
+          <div class="link">
+            <p><%= link_to 'Pin My Location', interest_locations_path %></p>
+          </div>
+          <div class="footer">
+            <p>TO RECEIVE ALERTS</p>
+          </div>
         </div>
+
+
       </div>
 
     </div>
