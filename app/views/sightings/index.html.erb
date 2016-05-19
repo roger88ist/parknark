@@ -7,9 +7,13 @@
       <p class="alert"><%= alert %></p>
 
       <h1 class="user-signed-in">ParkNark</h1>
-      <p><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
-
-      <div id="map"></div>
+      <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+      <div class="container">
+        <div class="top-tab">
+          <p>YOUR SIGHTINGS HISTORY</p>
+        </div>
+        <div id="map"></div>
+      </div>
 
       <div class="sightings-bottom">
         <div class="sightings-b-l">

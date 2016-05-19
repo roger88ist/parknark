@@ -90,10 +90,14 @@ div.temp-sightings-index{
 /*END OF HOMPAGE STYLING*/
 
 
-/*CSS CODE FOR USER HOMEPAGE SYTLING*/
+/*CSS CODE FOR USER HOMEPAGE SYTLING (SIGHTINGS INDEX)*/
 /*----------------------------*/
 h1.user-signed-in {
-	margin-top: 30px;
+	margin-top: 50px;
+}
+
+p:nth-child(3) {
+	margin-top: -50px;
 }
 /*------------------------*/
 /*END OF USER HOMEPAGE STYLING*/

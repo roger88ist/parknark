@@ -17,7 +17,6 @@
 //= require_tree .
 
 function ready() { 
-  console.log("READY" + gon.array_of_cor)
   
   initGeolocation();
   // initMap();
