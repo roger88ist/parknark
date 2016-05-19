@@ -31,6 +31,7 @@ h1.green {
 div.signin-bottom {
 	display: flex;
 	justify-content: space-between;
+	margin-top: -30px;
 }
 
 div.signin-bottom-l {
@@ -56,6 +57,11 @@ div.signin-signup {
 	background-color: #009900;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+}
+
+div.container-bsi {
+    position: relative;
+    top: -15px;
 }
 
 div.signin-signup a {

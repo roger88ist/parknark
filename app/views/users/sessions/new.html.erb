@@ -6,7 +6,12 @@
       <h1 class="green">ParkNark</h1>
       <h3 class="green">Sign Up to Receive Alerts</h3>
 
-      <div id="map"></div>
+      <div class="container-bsi">
+        <div class="top-tab">
+          <p>RECENT SIGHITNGS AROUND YOU</p>
+        </div>
+        <div id="map"></div>
+      </div>
 
       <div class="signin-bottom">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
