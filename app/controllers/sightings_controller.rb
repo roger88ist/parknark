@@ -34,6 +34,14 @@ class SightingsController < ApplicationController
       if @sighting.save
         format.html { redirect_to @sighting, notice: 'Sighting was successfully created.' }
         format.json { render :show, status: :created, location: @sighting }
+
+        ################################################################
+        post_array = [@sighting.latitude, @sighting.longitude]
+        
+        locations = InterestLocation.all
+        users = @sighting.target_users(post_array, locations)
+        @sighting.send_email(users)
+        ################################################################
       else
         format.html { render :new }
         format.json { render json: @sighting.errors, status: :unprocessable_entity }
@@ -77,4 +85,6 @@ class SightingsController < ApplicationController
     def sighting_params
       params.require(:sighting).permit(:day, :latitude, :longitude)
     end
+
+
 end
