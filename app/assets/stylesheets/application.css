@@ -17,6 +17,12 @@
 	height:100%;
 }*/
 
+div.disappear {
+	position: absolute;
+	left: 44%;
+	top: 3px;
+}
+
 /*CSS CODE FOR HOMPAGE SYTLING*/
 /*----------------------------*/
 h1.green {

@@ -3,12 +3,6 @@
   They will automatically be included in application.css.
 */
 
-div.disappear {
-	position: absolute;
-	left: 44%;
-	top: 3px;
-}
-
 #notice {
 	color: white;
 	font-family: sans-serif;
