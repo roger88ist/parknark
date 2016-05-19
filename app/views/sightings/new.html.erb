@@ -1,18 +1,26 @@
 <div id="storefront">
-	<div id="signimage">
-		<div id="siteform">
+  <div id="signimage">
+	<div id="siteform">
 
-			<h1 style="display:flex;justify-content: center;">New Sighting</h1>
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
-			<%#= link_to("Sign UP", new_user_registration_path) %>
-			<%#= link_to("Sign IN", new_user_session_path) %>
+		  <% if notice || alert %>
+        	<div class="disappear">
+          		<p id="notice"><%= notice %></p>
+          		<p class="alert"><%= alert %></p>
+        	</div>
+      	  <% end %>
+
+      	  <div class="h1-n">
+			<h1>New Sighting</h1>
 			<p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+		  </div>
 
-			<br><br>
+		  <div class="form-n">
 			<%= render 'form' %>
+		  </div>
 
+		  <div class="back-n">
 			<%= link_to 'Back', sightings_path %>
-		</div>
+		  </div>
 	</div>
+  </div>
 </div>
