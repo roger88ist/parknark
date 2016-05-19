@@ -3,11 +3,17 @@
   <div id="signimage">
     <div id="siteform">
 
-      <p id="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice || alert %>
+        <div class="disappear">
+          <p id="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
 
-      <h1 class="user-signed-in">ParkNark</h1>
-      <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+      <div class="header">
+        <h1 class="user-signed-in">ParkNark</h1>
+        <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+      </div>
       <div class="container">
         <div class="top-tab">
           <p>YOUR SIGHTINGS HISTORY</p>

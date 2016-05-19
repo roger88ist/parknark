@@ -3,6 +3,17 @@
   They will automatically be included in application.css.
 */
 
+div.disappear {
+	position: absolute;
+	left: 39%;
+	top: 3px;
+}
+
+#notice {
+	color: white;
+	font-family: sans-serif;
+}
+
 p.sign-out {
     position: relative;
     top: -24px;
@@ -81,19 +92,4 @@ div.footer p {
 	font-weight: 200px;
 	font-family: sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
