@@ -113,6 +113,14 @@ p:nth-child(3) {
 }
 /*------------------------*/
 /*END OF USER HOMEPAGE STYLING*/
+div.h2-su {
+	margin-top: 65px;
+}
+
+/*CSS CODE FOR SIGN UP SYTLING (registrations new)*/
+/*----------------------------*/
+
+
 
 #siteform {
 justify-content: center;
