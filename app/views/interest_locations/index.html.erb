@@ -1,38 +1,15 @@
-<%= include_gon %>
-<div id="storefront">
-  <div id="signimage">
-    <div id="siteform">
-
-      <% if notice || alert %>
-        <div class="disappear">
-          <p id="notice"><%= notice %></p>
-        </div>
-      <% end %>    
-      
-      <div class="header-il">
-        <h1>Notification Radius</h1>
-        <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
-      </div>
-
-      <div class="container-il">
-        <div class="top-tab">
-          <p>YOUR CURRENT SCOPE</p>
-        </div>
-        <div id="map"></div>
-      </div>
-
-          <%# @interest_locations.each do |interest_location| %>
-              <%#= interest_location.latitude %>
-              <%#= interest_location.longitude %>
-              <%#= interest_location.radius %>
-              <%#= link_to 'Destroy', interest_location, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%# end %>
-      <div>
-        <p><%= link_to 'New Interest location', new_interest_location_path %></p>
-        <p><%= link_to "Your Profile", sightings_path %></p>
-      </div>
-    
-    </div>
+<%= include_gon %>         
+<div class="header-il">
+  <h1>Notification Radius</h1>
+</div>
+<div class="container-il">
+  <div class="top-tab">
+    <p>YOUR CURRENT SCOPE</p>
   </div>
+  <div id="map"></div>
 </div>
 
+<div>
+  <p><%= link_to 'New Interest location', new_interest_location_path %></p>
+  <p><%= link_to "Your Profile", sightings_path %></p>
+</div>

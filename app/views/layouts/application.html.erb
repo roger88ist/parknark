@@ -9,10 +9,26 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
-<body class="<%= controller_name %> <%= action_name %>">
+<!-- <body class="<%#= controller_name %> <%#= action_name %>"> -->
+<body>
+  <div id="storefront">
+    <div id="signimage">
+      <div id="siteform">
+        <% if notice || alert %>
+        <div class="disappear">
+          <p id="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <% end %>
+        <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
+        <div id="siteobject">
+          <img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="82%" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block"><br>
+        </div>
 
-<%= yield %>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY_JS']%>" type="text/javascript"></script>
-
+        <%= yield %>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY_JS']%>" type="text/javascript"></script>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

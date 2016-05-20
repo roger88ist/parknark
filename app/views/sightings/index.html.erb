@@ -1,55 +1,41 @@
+
 <%= include_gon %>
-<div id="storefront">
-  <div id="signimage">
-    <div id="siteform">
 
-      <% if notice || alert %>
-        <div class="disappear">
-          <p id="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-      <% end %>
-
-      <div class="header">
-        <h1 class="user-signed-in">ParkNark</h1>
-        <p class="sign-out"><%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %></p>
-      </div>
-      <div class="container">
-        <div class="top-tab">
-          <p>YOUR SIGHTINGS HISTORY</p>
-        </div>
-        <div id="map"></div>
-      </div>
-
-      <div class="sightings-bottom">
- 
-        <div class="sightings-b-l">
-          <div class="link">
-            <p><%= link_to 'Report a Sighting', new_sighting_path %></p>
-          </div>
-          <div class="footer">
-            <p>TO SEND ALERTS</p>
-          </div>
-        </div>
-
-        
-        <div class="sightings-b-r">
-          <div class="link">
-            <p><%= link_to 'Pin My Location', interest_locations_path %></p>
-          </div>
-          <div class="footer">
-            <p>TO RECEIVE ALERTS</p>
-          </div>
-        </div>
-
-
-      </div>
-
-    </div>
+<div class="header">
+  <h1 class="user-signed-in">ParkNark</h1>
+</div>
+<div class="container">
+  <div class="top-tab">
+    <p>YOUR SIGHTINGS HISTORY</p>
   </div>
+  <div id="map"></div>
 </div>
 
-<!-- The below div will be deleted once the appropriate map is created for this page -->
+<div class="sightings-bottom">
+
+  <div class="sightings-b-l">
+    <div class="link">
+      <p><%= link_to 'Report a Sighting', new_sighting_path %></p>
+    </div>
+    <div class="footer">
+      <p>TO SEND ALERTS</p>
+    </div>
+  </div>
+
+
+  <div class="sightings-b-r">
+    <div class="link">
+      <p><%= link_to 'Pin My Location', interest_locations_path %></p>
+    </div>
+    <div class="footer">
+      <p>TO RECEIVE ALERTS</p>
+    </div>
+  </div>
+
+
+</div>
+
+
 <!-- <div>
   <h1>Once the appropriate map is created DELETE ME! (I AM A DIV)</h1>
   <#% @sightings.each do |sighting| %>
