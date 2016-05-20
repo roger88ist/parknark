@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #   # get '/' => 'devise/sessions#new'
   # end
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, :controllers => { registrations: 'registrations', sessions: 'users/sessions' }
+  # devise_for :users, controllers: { sessions: 'users/sessions' }
   root 'sightings#index'
   resources :interest_locations
   resources :sightings
