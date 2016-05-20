@@ -1,10 +1,11 @@
-
+<!--
 <div id="storefront">
   <div id="signimage">
     <div id="siteform">
-
+      <div id="siteobject">
+            <img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="82%" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block"><br>
+      </div> -->
       <p id="notice"><%= notice %></p>
-      <img src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="320px" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block"><br>
 
       <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
       <div class="ticket-button">
@@ -14,13 +15,7 @@
       <div class="temp-sightings-index">
         <!-- Delete this div once the appropriate map has been created. -->
         <!-- check comments below for details on appropriate map -->
-        <h1>MAP GOES HERE</h1>
-        <h5>* Pins will be displayed in this map</h5>
-        <h5>* Each pin represents each instance of the current user's History</h5>
-        <h5>* In other words, a history displayed with Pins</h5>
-        <p>When this map is generated, we switch this temporary div with the  approapriate map</p>
-        <p>This is the views/sightings/index file</p>
-      </div>
+      <div id="map"></div>
 
       <div>
         <!-- Rogerio commented out the map until the right map gets created -->
@@ -38,7 +33,7 @@
 
 <!-- The below div will be deleted once the appropriate map is created for this page -->
 <div>
-  <h1>Once the appropriate map is created DELETE ME! (I AM A DIV)</h1>
+  <!-- <h1>Once the appropriate map is created DELETE ME! (I AM A DIV)</h1> -->
   <% @sightings.each do |sighting| %>
     <p><b>Day:</b> <%= sighting.day %></p>
     <p><b>Latitude: </b> <%= sighting.latitude %></p>

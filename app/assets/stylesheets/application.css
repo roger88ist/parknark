@@ -23,47 +23,96 @@
 	margin-bottom: -20px;
 }*/
 
-.green {
+/*.green {
 	color: #730001;
+}*/
+/*top left*/
+
+
+
+div.container-bsi {
+    position: relative;
+    top: -15px;
+}
+div.top-tab {
+    background-color: black;
+    width: 310px;
+    margin: auto;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
+td.signupbox {
+
+	padding-left: 7%;
+	padding-bottom: 12%;
+}
+
+table.maintable {
+	width: 20%;
+ 	padding-left: 30px;
+}
+
+
+/*#tableoragnizer {
+	margin: 1% 0% 0% 0%;
+	width: 10%;
+}*/
+
+#signinreplacement {
+margin-top: 10%
+}
 div.signin-bottom {
 	display: flex;
 	justify-content: space-between;
+	margin-top: 0%;
+	margin-left: 0%;
 }
 
 div.signin-bottom-l {
-	margin-top: 10px;
-	margin-left: 35px;
+	margin-top: 10%;
+	margin-left: 30%;
 }
 
 div.signin-bottom-l div:nth-child(3) {
 	background-color: #730001;
 	border-radius: 5px;
-	padding-top: 4px;
-	width: 125px;
+	/*padding-top: 4px;*/
+	width: 100%;
 }
 
 div.signin-bottom-l div:nth-child(3) label {
 	color: white;
+	font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
+
 }
 
 div.signin-signup {
-	height: 25px;
+	height: 25%;
 	margin-top: 10px;
 	padding-top: 10px;
 	background-color: #730001;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
+
 }
 
 div.signin-signup a {
-	font-size: 25px;
+	font-size: 13px;
 	color: white;
+	font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
+
 }
 
 div.signin-bottom-r {
-	margin-right: 35px;
+	margin-right: 9%;
+	margin-top: 0%;
+	font-size: 6px;
+	font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
+
+
 }
 
 div.sigin-fyp {
@@ -76,7 +125,9 @@ div.sigin-fyp {
 
 div.sigin-fyp a {
 	color: #730001;
-	font-size: 20px;
+	font-size: 13px;
+	font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
+
 }
 
 div.temp-sightings-index{
@@ -116,7 +167,7 @@ padding: 0%
 
 #ticketstandard{
 	background-size: 100%, 100%;
-  font-family: 'Avenir Next LT Pro Heavy Condensed',verdana, arial, helvetica, sans-serif !important;
+  font-family: "Highway Gothic",verdana, arial, helvetica, sans-serif !important;
   font-size: 13px;
   color: #530000;
   text-align: center;
@@ -146,7 +197,9 @@ padding: 0%
 	background-image: url('signbackgroundimage2.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-	font-family: 'Avenir Next LT Pro Heavy Condensed',verdana, arial, helvetica, sans-serif !important;
+	width: 100%;
+	height: 98vh;
+	font-family: 'Highway Gothic',verdana, arial, helvetica, sans-serif !important;
 }
 
 #homepage_container, #container-s {
@@ -154,7 +207,7 @@ padding: 0%
 }
 
 #map {
-	border: 5px solid black;
+	border: 5px solid #730001;
 	border-radius: 10px;
 	width: 300px;
 	height: 47vh;
@@ -178,18 +231,25 @@ a, h1, h2	{
 	font-size: 20px;
 }
 
+
 @font-face {
-font-family: 'Avenir Next LT Pro Heavy Condensed';
+  font-family: "Highway Gothic";
+  src: url(/assets/HWYGOTH.ttf) format("truetype");
+}
+
+
+/*@font-face {
+font-family: 'HWYGOTH';
 font-style: normal;
 font-weight: normal;
-src: local('Avenir Next LT Pro Heavy Condensed'), url('AvenirNextLTPro-HeavyCn.woff') format('woff');
+src: local('HWYGOTH'), url('HWYGOTH.TTF') format('TTF');
 }
 @font-face {
 font-family: 'Avenir Next LT Pro Heavy Condensed';
 font-style: normal;
 font-weight: normal;
-src: local('Avenir Next LT Pro Heavy Condensed'), url('AvenirNextLTPro-HeavyCn.woff') format('woff');
-}
+src: local('HWYGOTH'), url('HWYGOTH.TTF') format('TTF');
+}*/
 
 /*background: url(images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -202,13 +262,14 @@ html{
 	background-image: url("/assets/storefront.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+	height:100%;
 }
 
 
 @media screen and (max-width: 1900px) {
 	#signimage {
 		width: 375px;
-		height: 96vh;
+		height: 98vh;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -235,23 +296,72 @@ Nexus 411 x 731
 ip 6 375 x 667
 Galaxy 360 x 640
 Iphone 5 320 x 568*/
+div.signin-bottom {
+	font-size: 13px;
+}
 	@media screen and (max-width: 380px) {
 	#signimage {
 		width: 100%;
-		height: 96vh;
+		height: 98vh;
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	div.signin-bottom {
+		font-size: 8px;
+	}
 	#map {
-		border: 2px solid #530000;
+		border: 2px solid #730001;
 		border-radius: 10px;
 		width: 80%;
 		height: 40vh;
 	}
+
+
 		/*body {
 			width: 100%;
 			height: 100%;
 			margin-left: auto;
 			margin-right: auto;
 		}*/
+}
+
+
+@media screen and (max-width: 327px) {
+#signimage {
+	width: 100%;
+	height: 98vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.signin-bottom {
+	font-size: 10px;
+}
+
+div.signin-bottom-r {
+
+	font-size: 10px;
+}
+
+
+
+#map {
+	border: 2px solid #730001;
+	border-radius: 10px;
+	width: 80%;
+	height: 40vh;
+}
+
+a {
+	font-size: 6px;
+
+}
+
+	/*body {
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}*/
 }
