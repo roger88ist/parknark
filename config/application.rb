@@ -9,8 +9,12 @@ Bundler.require(*Rails.groups)
 
 module DeviseAttempt
   class Application < Rails::Application
-    YAML.load_file("#{Rails.root}/config/twilio.yml") || {}
-    # Settings in config/environments/* take precedence over those specified here.
+    config.before_configuration do
+    env_file = File.join(Rails.root, 'config', 'local_env.yml')
+    YAML.load(File.open(env_file)).each do |key, value|
+      ENV[key.to_s] = value
+    end if File.exists?(env_file)
+  end
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
