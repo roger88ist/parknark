@@ -70,9 +70,9 @@ function initMap() {
     for (var idx in final) {
       var cityCircle = new google.maps.Circle({
         strokeColor: '#000000',
-        strokeOpacity: 0.8,
+        strokeOpacity: 1,
         strokeWeight: 1,
-        fillColor: '#00FF00',
+        fillColor: '#3498db',
         fillOpacity: 0.35,
         map: map,
         center: final[idx],

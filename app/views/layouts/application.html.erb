@@ -21,7 +21,7 @@
         </div>
         <% end %>
         <% if user_signed_in? %>
-          <div>
+          <div class="sign-out">
             <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
           </div>
         <% end -%>

@@ -10,9 +10,71 @@ div.header-il {
 
 div.container-il {
 	position: relative;
-	top: -10px;
+	top: -35px;
 }
 
 div.header-iln {
 	margin-top: 50px;
 }
+
+#siteobject img {
+	position: relative;
+	top: -22px;
+}
+
+div.scroll {
+	width: 300px;
+    margin: auto;
+    border: 5px solid black;
+    height: 98px;
+    position: relative;
+    top: -51px;
+    border-radius: 10px;
+    background: white;
+    overflow: scroll;
+    background: #707070;
+}
+
+div.space {
+	height: 10px;
+}
+
+div.box {
+	display: flex;
+	flex-direction: row;
+	border: 2px solid black;
+	height: 30px;
+	width: 290px;
+	margin: auto;
+	border-radius: 50px;
+}
+
+.item {
+	float: left;
+	width: 90%;
+	/*background: #3498db;*/
+	background-color:rgba(52, 152, 219, 0.35);
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 50px;
+}
+
+.remove {
+	background: black;
+	width: 35px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.remove a {
+	color: white;
+}
+
+.item p, .remove p {
+	position: relative;
+	top: -12px;
+	color: white;
+}
+
+/*.item p {
+	left: 35px;
+}*/
