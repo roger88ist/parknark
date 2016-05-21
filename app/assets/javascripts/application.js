@@ -16,8 +16,8 @@
 //= require jquery-readyselector
 //= require_tree .
 
-function ready() { 
-  
+function ready() {
+
   initGeolocation();
   // initMap();
 
@@ -29,7 +29,7 @@ function ready() {
     else {
      alert("Sorry, your browser does not support geolocation services.");
     }
-  }    
+  }
 
   function success(position){
     $("input#lat").val(position.coords.latitude);
@@ -47,7 +47,7 @@ function ready() {
   //       var pos = {
   //       lat: position.coords.latitude,
   //       lng: position.coords.longitude,
-  //       lat: 
+  //       lat:
   //       };
 
   //     // infoWindow.setPosition(pos);
