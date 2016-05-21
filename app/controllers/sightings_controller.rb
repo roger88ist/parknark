@@ -7,7 +7,7 @@ class SightingsController < ApplicationController
   def index
     @sightings = current_user.sightings
     gon.array_of_cor = Sighting.get_cordinates(@sightings)
-    gon.poop = true
+    # @gon = gon.array_of_cor
   end
 
   # GET /sightings/1

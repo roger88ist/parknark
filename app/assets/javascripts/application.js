@@ -17,6 +17,7 @@
 //= require_tree .
 
 function ready() { 
+
   
   initGeolocation();
   // initMap();
@@ -24,10 +25,10 @@ function ready() {
   function initGeolocation() {
     if( navigator.geolocation ) {
      // Call getCurrentPosition with success and failure callbacks
-     navigator.geolocation.getCurrentPosition( success, fail );
-   }
+      navigator.geolocation.getCurrentPosition( success, fail );
+    }
     else {
-     alert("Sorry, your browser does not support geolocation services.");
+      alert("Sorry, your browser does not support geolocation services.");
     }
   }    
 
@@ -37,31 +38,8 @@ function ready() {
   }
 
   function fail() {
-  // Could not obtain location
+    // Could not obtain location
   }
-
-
-  // var infoWindow = new google.maps.InfoWindow({map: map});
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(function(position) {
-  //       var pos = {
-  //       lat: position.coords.latitude,
-  //       lng: position.coords.longitude,
-  //       lat: 
-  //       };
-
-  //     // infoWindow.setPosition(pos);
-  //     // infoWindow.setContent('YOU ARE HERE');
-  //     map.setCenter(pos);
-  //     map.setZoom(15);
-  //     map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
-  //     }, function() {
-  //     handleLocationError(true, infoWindow, map.getCenter());
-  //   });
-  // } else {
-  //   // Browser doesn't support Geolocation
-  //   handleLocationError(false, infoWindow, map.getCenter());
-  // }
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -72,37 +50,53 @@ function ready() {
 }
 
 var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+function initMap() {
+  var page = $("#page_id").attr('value');
+  console.log("This is the page " + page);
+
+  map = new google.maps.Map(document.getElementById('map'), {
     // center: final[0],
-      zoom: 17,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    });
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+  });
 
-    var final = [];
+  var final = [];
+  for (var i = 0; i < gon.array_of_cor.length; i++) {
+    var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
+    final.push(result);
+  }
 
-    for (var i = 0; i < gon.array_of_cor.length; i++) {
-      var result = {lat: gon.array_of_cor[i][0], lng: gon.array_of_cor[i][1]};
-      final.push(result);
+  if (page !== "markers") {
+    for (var idx in final) {
+      var cityCircle = new google.maps.Circle({
+        strokeColor: '#000000',
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
+        fillColor: '#00FF00',
+        fillOpacity: 0.35,
+        map: map,
+        center: final[idx],
+        radius: 300,
+      });
     }
-
-
+  } else {
     var markers = [];
 
     for (i = 0; i < final.length; i++) {
       var marker = new google.maps.Marker({
-      position: final[i],
-      map: map,
-    });
-    markers.push(marker);
-    }
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        map.setCenter(initialLocation);
+        position: final[i],
+        map: map,
       });
-    }
+      // markers.push(marker);
+    }    
   }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      map.setCenter(initialLocation);
+    });
+  }
+}
 
 $(document).on("ready page:load", ready);
