@@ -30,7 +30,7 @@ function ready() {
     else {
       alert("Sorry, your browser does not support geolocation services.");
     }
-  }    
+  }
 
   function success(position){
     $("input#lat").val(position.coords.latitude);
