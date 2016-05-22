@@ -25,7 +25,10 @@ class Sighting < ActiveRecord::Base
 		users = []
 		array2.each do |instance|
 			distance = find_distance(array1, [instance.latitude, instance.longitude])
-			if distance < 1
+			# 0.402 km equals 1/4 mile. 
+			# This will be the radius for now.
+			# the circle on interest_locations map reflects that as it is set to 531
+			if distance < (0.402)
 				users.push(instance.user_id)
 			end
 		end
