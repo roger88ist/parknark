@@ -1,6 +1,18 @@
 class Sighting < ActiveRecord::Base
 	belongs_to :user
 
+	ALERT_MESSAGE = "Meter maid is around".freeze
+
+	def notify
+		@interest_locations = InterestLocation.all
+		@interest_locations.each do |interest_location|
+			dist = find_distance([self.latitude, self.longitude], [interest_location.latitude, interest_location.longitude])
+			if interest_location.radius > dist
+				# send_message(interest_location.user.try(:phone_number), ALERT_MESSAGE)
+				send_message("+17049955069", ALERT_MESSAGE)
+			end
+		end
+	end
 
 	def self.get_cordinates(arr)
 		arr.map do |element|
@@ -40,6 +52,21 @@ class Sighting < ActiveRecord::Base
 		end
 		puts "USERS IS: #{array}"
 		puts "*********************************"
+	end
+	private
+	def send_message(phone_number, alert_message)
+		account_sid = ENV['TWILIO_ACCOUNT_SID']
+		auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+		# set up a client to talk to the Twilio REST API
+		@client = Twilio::REST::Client.new account_sid, auth_token
+
+		@twilio_number = ENV['TWILIO_NUMBER']
+		@client.account.messages.create({
+			:from => @twilio_number,
+			:to => phone_number,
+			:body => alert_message
+		});
 	end
 
 end

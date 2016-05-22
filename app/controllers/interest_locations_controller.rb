@@ -29,7 +29,6 @@ class InterestLocationsController < ApplicationController
   # POST /interest_locations.json
   def create
     @interest_location = current_user.interest_locations.build(interest_location_params)
-
     respond_to do |format|
       if @interest_location.save
         format.html { redirect_to @interest_location, notice: 'Interest location was successfully created.' }

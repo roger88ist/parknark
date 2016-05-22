@@ -16,9 +16,9 @@
 //= require jquery-readyselector
 //= require_tree .
 
-function ready() { 
+function ready() {
 
-  
+
   initGeolocation();
   // initMap();
 
@@ -88,7 +88,7 @@ function initMap() {
         map: map,
       });
       // markers.push(marker);
-    }    
+    }
   }
 
   if (navigator.geolocation) {

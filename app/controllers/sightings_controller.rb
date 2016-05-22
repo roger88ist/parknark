@@ -30,9 +30,10 @@ class SightingsController < ApplicationController
   def create
     @alert_message = "Meter Maid is around."
     @sighting = current_user.sightings.build(sighting_params)
+    @sighting.notify
     respond_to do |format|
 
-      send_message("+17049955069", @alert_message)
+      # send_message("+17049955069", @alert_message)
 
       if @sighting.save
 
