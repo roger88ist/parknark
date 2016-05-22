@@ -1,15 +1,38 @@
 <%= include_gon %>         
-<div class="header-il">
-  <h1>Notification Radius</h1>
-</div>
 <div class="container-il">
-  <div class="top-tab">
-    <p>YOUR CURRENT SCOPE</p>
-  </div>
-  <div id="map"></div>
+	<div class="top-tab">
+		<p>YOUR CURRENT SCOPE</p>
+	</div>
+	<div id="map"></div>
 </div>
 
-<div>
-  <p><%= link_to 'New Interest location', new_interest_location_path %></p>
-  <p><%= link_to "Your Profile", sightings_path %></p>
-</div>
+<% if @interest_locations.length == 0 %>
+	<div class="empty">
+		<%= link_to 'Click to Add an Area', new_interest_location_path %>
+	</div>
+	<div class="link-to-profile">
+		<%= link_to "HOME", sightings_path %>
+	</div>
+<% else %>
+	<div class="scroll">
+		<div class="space"></div>
+		<% @interest_locations.each do |item| %>
+		<div class="box">
+			<div class="item">
+				<p><%= item.created_at.strftime("%a %b %d %-I:%M  %p") %></p>
+			</div>
+			<div class="remove">
+				<p><%= link_to 'X', item, method: :delete, data: { confirm: 'Are you sure?' }  %></p>
+			</div>
+		</div>
+		<div class="space"></div>
+		<% end %>
+	</div>
+	<div class="link-to-profile">
+		<%= link_to "HOME", sightings_path %>
+	</div>
+	<div class="add-il">
+		<%= link_to 'ADD', new_interest_location_path %>
+	</div>
+<% end %>
+

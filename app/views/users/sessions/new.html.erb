@@ -1,50 +1,39 @@
-<div id="storefront">
-  <div id="signimage">
-    <div id="siteform">
+<input value="markers" type="hidden" id="page_id" /> 
+<div class="container-bsi">
+  <div class="top-tab">
+    <p>RECENT SIGHITNGS AROUND YOU</p>
+  </div>
+  <div id="map"></div>
+</div>
 
+<div class="signin-bottom">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="signin-bottom-l">
 
-      <h1 class="green">ParkNark</h1>
-      <h3 class="green">Sign Up to Receive Alerts</h3>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, :placeholder => "Email" %>
+      </div>
 
-      <div class="container-bsi">
-        <div class="top-tab">
-          <p>RECENT SIGHITNGS AROUND YOU</p>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
         </div>
-        <div id="map"></div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
       </div>
-
-      <div class="signin-bottom">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="signin-bottom-l">
-
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, :placeholder => "Email" %>
-            </div>
-
-            <div class="field">
-              <%= f.password_field :password, autocomplete: "off", :placeholder => "Password" %>
-            </div>
-
-            <% if devise_mapping.rememberable? -%>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-              </div>
-            <% end -%>
-
-            <div class="actions">
-              <%= f.submit "Log in" %>
-            </div>
-            <% end %>
-
-          </div>
-
-          <div class="signin-bottom-r">
-            <%= render "devise/shared/links" %>
-          </div>
-
-      </div>
+      <% end %>
 
     </div>
-  </div>
+
+    <div class="signin-bottom-r">
+      <%= render "devise/shared/links" %>
+    </div>
+
 </div>

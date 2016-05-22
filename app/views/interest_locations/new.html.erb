@@ -1,20 +1,12 @@
-<div id="storefront">
-  <div id="signimage">
-    <div id="siteform">
+<!-- <div class="header-iln">
+	<h1>New Interest Location</h1>
+</div> -->
 
-      <div class="header-iln">
-		<h1>New Interest Location</h1>
-	  </div>
+<div class="form-iln">
+	<%= render 'form' %>
+</div>
 
-	  <div class="form-iln">
-		<%= render 'form' %>
-	  </div>
-
-	  <div class="bottom-iln">
-		<p><%= link_to 'Back', interest_locations_path %></p>
-		<p><%= link_to 'Profile', sightings_path %></p>
-	  </div>
-	  
-	</div>
-  </div>
-</div>  
+<div class="bottom-iln">
+	<p><%= link_to 'Back', interest_locations_path %></p>
+	<p><%= link_to 'Profile', sightings_path %></p>
+</div>

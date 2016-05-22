@@ -2,6 +2,9 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+a {
+	color: white;
+}
 
 div.header-il {
 	position: relative;
@@ -10,9 +13,159 @@ div.header-il {
 
 div.container-il {
 	position: relative;
-	top: -10px;
+	top: -35px;
 }
 
 div.header-iln {
 	margin-top: 50px;
 }
+
+#siteobject img {
+	position: relative;
+	top: -22px;
+}
+
+div.empty {
+	width: 300px;
+    margin: auto;
+    border: 5px solid black;
+    height: 98px;
+    position: relative;
+    top: -51px;
+    border-radius: 10px;
+    background: #707070;
+}
+
+div.empty a {
+	font-size: 40px;
+    position: relative;
+    top: 3px;
+    font-family: Helvetica;
+}
+
+div.link-to-profile {
+	width: 80px;
+	background: black;
+	position: relative;
+    top: -52px;
+    left: 15%;
+    height: 26px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+div.add-il {
+	width: 80px;
+	background: black;
+	position: relative;
+	height: 26px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    top: -78px;
+    float: right;
+    right: 15%;
+}
+
+div.scroll {
+	width: 300px;
+    margin: auto;
+    border: 5px solid black;
+    height: 98px;
+    position: relative;
+    top: -51px;
+    border-radius: 10px;
+    overflow: scroll;
+    background: #707070;
+}
+
+div.space {
+	height: 10px;
+}
+
+div.box {
+	display: flex;
+	flex-direction: row;
+	border: 2px solid black;
+	height: 30px;
+	width: 290px;
+	margin: auto;
+	border-radius: 50px;
+}
+
+.item {
+	float: left;
+	width: 90%;
+	background-color:rgba(52, 152, 219, 0.35);
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 50px;
+}
+
+.remove {
+	background: black;
+	width: 35px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.item p, .remove p {
+	position: relative;
+	top: -12px;
+	color: white;
+}
+
+.wrapper {
+	border: 5px solid #730001;
+	border-radius: 10px;
+	width: 250px;
+	margin: auto;
+	background: #730001;
+}
+
+input#lat , input#long {
+	height: 25px;
+    font-size: 22px;
+    color: #730001;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+div.label {
+	background: #730001;
+	color: white;
+	height: 25px;
+	font-size: 33px;
+	position: relative;
+	top: -34px;
+}
+
+div.label p {
+	position: relative;
+    top: 7px;
+}
+
+div.input {
+    background: white;
+    height: 55px;
+    border-radius: 5px;
+}
+
+div.input input {
+	position: relative;
+	top: 13px;
+}
+
+div.actions {
+	position: relative;
+	top: 15px;
+}
+
+div.actions input {
+	border: 2px solid black;
+	height: 50px;
+	font-size: 30px;
+    background: white;
+}
+
