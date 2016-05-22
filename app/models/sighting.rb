@@ -1,12 +1,12 @@
 class Sighting < ActiveRecord::Base
 	belongs_to :user
 
-	ALERT_MESSAGE = "Meter maid is around".freeze
+	ALERT_MESSAGE = "Meter Maid is handing out TICKETS near by".freeze
 
 	def notify
 		@interest_locations = InterestLocation.all
 		@interest_locations.each do |interest_location|
-			dist = find_distance([self.latitude, self.longitude], [interest_location.latitude, interest_location.longitude])		
+			dist = find_distance([self.latitude, self.longitude], [interest_location.latitude, interest_location.longitude])
 	if interest_location.radius && interest_location.radius > dist
 				# send_message(interest_location.user.try(:phone_number), ALERT_MESSAGE)
 				send_message("+17049955069", ALERT_MESSAGE)
