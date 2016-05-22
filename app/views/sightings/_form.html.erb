@@ -11,19 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :day %><br>
-    <%= f.text_field :day %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude, :id => "lat", :readonly => true %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude%><br>
-    <%= f.text_field :longitude, :id => "long", :readonly => true  %>
+  <div class="wrapper">
+<!--     <div class="field">
+      <%#= f.label :day %><br>
+      <%#= f.text_field :day %>
+    </div> -->
+    <div class="field">
+      <div class="label">
+        <%#= f.label :latitude %>
+        <p>LATITUDE</p>
+      </div>
+      <div class="input">
+        <%= f.text_field :latitude, :id => "lat", :readonly => true , placeholder: "Populating..."%>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%#= f.label :longitude%>
+        <p>LONGITUDE</p>
+      </div>
+      <div class="input">
+        <%= f.text_field :longitude, :id => "long", :readonly => true, placeholder: "...Please Wait"  %>
+      </div>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>
