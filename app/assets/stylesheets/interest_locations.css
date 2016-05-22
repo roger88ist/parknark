@@ -113,3 +113,59 @@ div.box {
 	color: white;
 }
 
+.wrapper {
+	border: 5px solid #730001;
+	border-radius: 10px;
+	width: 250px;
+	margin: auto;
+	background: #730001;
+}
+
+input#lat , input#long {
+	height: 25px;
+    font-size: 22px;
+    color: #730001;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+div.label {
+	background: #730001;
+	color: white;
+	height: 25px;
+	font-size: 33px;
+	position: relative;
+	top: -34px;
+}
+
+div.label p {
+	position: relative;
+    top: 7px;
+}
+
+div.input {
+    background: white;
+    height: 55px;
+    border-radius: 5px;
+}
+
+div.input input {
+	position: relative;
+	top: 13px;
+}
+
+div.actions {
+	position: relative;
+	top: 15px;
+}
+
+div.actions input {
+	border: 2px solid black;
+	height: 50px;
+	font-size: 30px;
+    background: white;
+}
+
