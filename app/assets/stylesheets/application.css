@@ -14,6 +14,16 @@
  *= require_self
  */
 
+#email-fyp input {
+	font-size: 20px;
+	width: 264px;
+	height: 35px;
+}
+
+#signup-fyp {
+	background: transparent;
+}
+
 div.sign-out {
 	width: 100px;
     position: relative;
@@ -28,20 +38,6 @@ div.disappear {
 	left: 44%;
 	top: 3px;
 }
-
-/*CSS CODE FOR HOMPAGE SYTLING*/
-/*----------------------------*/
-/*h1.green {
-	margin-top: 50px;
-	margin-bottom: -20px;
-}*/
-
-/*.green {
-	color: #730001;
-}*/
-/*top left*/
-
-
 
 div.container-bsi {
     position: relative;
@@ -66,12 +62,6 @@ table.maintable {
 	width: 20%;
  	padding-left: 30px;
 }
-
-
-/*#tableoragnizer {
-	margin: 1% 0% 0% 0%;
-	width: 10%;
-}*/
 
 #signinreplacement {
 margin-top: 10%

@@ -17,6 +17,13 @@ div.sightings-bottom {
 	display: flex;
 	justify-content: space-between;
 	margin-top: -49px;
+	border: 5px solid black;
+	border-radius: 10px;
+	background: #707070;
+	width: 300px;
+	margin: auto;
+	position: relative;
+    top: -50px;
 }
 
 div.top-tab {
@@ -47,30 +54,28 @@ div.container {
 }
 
 .sightings-b-l {
-	border: 5px solid #730001;
+	border: 5px solid black;
 	width: 125px;
-	margin-left: 40px;
-	border-radius: 10px;
-	height: 100px;
+	border-radius: 100%;
+	height:90px;
+	background: rgba(52, 152, 219, 0.35);
+	margin-left: 1%;
 }
 
-.sightings-b-l a {
-	color: #730001;
-	font-size: 30px;
+div.sightings-bottom a {
+	color: white;
+	font-size: 23px;
 }
 
 .sightings-b-r {
-	border: 5px solid #730001;
+	border: 5px solid black;
 	width: 125px;
-	margin-right: 40px;
-	border-radius: 10px;
-	height: 100px;
+	background: rgba(52, 152, 219, 0.35);
+	border-radius: 100%;
+	height: 90px;
+	margin-right: 1%;
 } 
 
-.sightings-b-r a {
-	color: #730001;
-	font-size: 30px;
-}
 
 div.footer {
 	background-color: #730001;
