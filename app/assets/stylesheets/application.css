@@ -364,6 +364,16 @@ div.signin-bottom {
 	font-size: 13px;
 	padding-top: 10px;
 }
+
+@media screen and (max-width: 400px) {
+	div.signin-bottom-l {
+		left: 9%;
+	}
+
+	div.signin-bottom-l div:nth-child(3) input, div.signin-bottom-l div:nth-child(4) input {
+		width: 125px;
+	}
+}
 	
 @media screen and (max-width: 380px) {
 	#signimage {
@@ -381,6 +391,32 @@ div.signin-bottom {
 		border-radius: 10px;
 		width: 80%;
 		height: 40vh;
+	}
+
+	div.top-tab {
+		width: 291px;
+	}
+
+	div.container {
+		top: -30px;
+	}
+
+	div.sightings-bottom {
+		top: -40px;
+		width: 230px;
+	}
+
+	div.sightings-b-l , div.sightings-b-r {
+		width: 100px;
+		height: 80px;
+	}
+
+	div.scroll {
+		width: 78%;
+	}
+
+	div.box {
+		width: 90%;
 	}
 }
 
@@ -405,7 +441,7 @@ div.signin-bottom {
 
 
 	#map {
-		border: 2px solid #730001;
+		border: 2px solid black;
 		border-radius: 10px;
 		width: 80%;
 		height: 40vh;
@@ -414,5 +450,32 @@ div.signin-bottom {
 	a {
 		font-size: 6px;
 	}
+}
 
+@media screen and (max-width: 327px) {
+	div.signin-bottom-l div:nth-child(3) input, div.signin-bottom-l div:nth-child(4) input {
+		width: 100px;
+	}
+
+	div.signin-signup {
+		width: 110px;
+	}
+
+	div.sigin-fyp {
+		width: 100px;
+		height: 70px;
+	}
+
+	div.sigin-fyp a {
+		font-size: 14px;
+	}
+
+	div.top-tab {
+		width: 248px;
+		top: -3px;
+	}
+
+	div.top-tab p {
+		font-size: 14px;
+	}
 }
