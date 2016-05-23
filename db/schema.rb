@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160520203127) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "interest_locations", force: :cascade do |t|
     t.float    "latitude"
     t.float    "longitude"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160520203127) do
     t.integer  "user_id"
   end
 
-  add_index "interest_locations", ["user_id"], name: "index_interest_locations_on_user_id"
+  add_index "interest_locations", ["user_id"], name: "index_interest_locations_on_user_id", using: :btree
 
   create_table "sightings", force: :cascade do |t|
     t.string   "day"
@@ -49,7 +52,8 @@ ActiveRecord::Schema.define(version: 20160520203127) do
     t.string   "phone"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "interest_locations", "users"
 end
