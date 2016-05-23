@@ -16,9 +16,9 @@
 //= require jquery-readyselector
 //= require_tree .
 
-function ready() { 
 
-  
+function ready() {
+
   initGeolocation();
   // initMap();
 
@@ -30,7 +30,7 @@ function ready() {
     else {
       alert("Sorry, your browser does not support geolocation services.");
     }
-  }    
+  }
 
   function success(position){
     $("input#lat").val(position.coords.latitude);
@@ -76,7 +76,7 @@ function initMap() {
         fillOpacity: 0.35,
         map: map,
         center: final[idx],
-        radius: 300,
+        radius: 402,
       });
     }
   } else {
@@ -88,7 +88,7 @@ function initMap() {
         map: map,
       });
       // markers.push(marker);
-    }    
+    }
   }
 
   if (navigator.geolocation) {

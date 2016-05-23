@@ -28,19 +28,23 @@ class SightingsController < ApplicationController
   # POST /sightings
   # POST /sightings.json
   def create
+    # @alert_message = "Meter Maid is around."
     @sighting = current_user.sightings.build(sighting_params)
-
+    # @sighting.notify
     respond_to do |format|
+
+      # send_message("+17049955069", @alert_message)
+
       if @sighting.save
+
         format.html { redirect_to @sighting, notice: 'Sighting was successfully created.' }
         format.json { render :show, status: :created, location: @sighting }
 
         ################################################################
-        post_array = [@sighting.latitude, @sighting.longitude]
+        @sighting.alert_users(InterestLocation.all)
         
-        locations = InterestLocation.all
-        users = @sighting.target_users(post_array, locations)
-        @sighting.send_email(users)
+        # users = @sighting.target_users(post_array, locations)
+        # @sighting.send_email(users)
         ################################################################
       else
         format.html { render :new }
@@ -86,5 +90,19 @@ class SightingsController < ApplicationController
       params.require(:sighting).permit(:day, :latitude, :longitude)
     end
 
+    # def send_message(phone_number, alert_message)
+    #   account_sid = ENV['TWILIO_ACCOUNT_SID']
+    #   auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    #   # set up a client to talk to the Twilio REST API
+    #   @client = Twilio::REST::Client.new account_sid, auth_token
+
+    #   @twilio_number = ENV['TWILIO_NUMBER']
+    #   @client.account.messages.create({
+    #   	:from => @twilio_number,
+    #   	:to => phone_number,
+    #   	:body => alert_message
+    #   });
+    # end
 
 end
