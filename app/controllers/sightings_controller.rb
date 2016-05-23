@@ -28,11 +28,11 @@ class SightingsController < ApplicationController
   # POST /sightings
   # POST /sightings.json
   def create
-    @alert_message = "Meter Maid is around."
+    # @alert_message = "Meter Maid is around."
     @sighting = current_user.sightings.build(sighting_params)
     respond_to do |format|
 
-      send_message("+17049955069", @alert_message)
+      # send_message("+17049955069", @alert_message)
 
       if @sighting.save
 
@@ -40,11 +40,10 @@ class SightingsController < ApplicationController
         format.json { render :show, status: :created, location: @sighting }
 
         ################################################################
-        post_array = [@sighting.latitude, @sighting.longitude]
-
-        locations = InterestLocation.all
-        users = @sighting.target_users(post_array, locations)
-        @sighting.send_email(users)
+        @sighting.alert_users(InterestLocation.all)
+        
+        # users = @sighting.target_users(post_array, locations)
+        # @sighting.send_email(users)
         ################################################################
       else
         format.html { render :new }
@@ -90,19 +89,19 @@ class SightingsController < ApplicationController
       params.require(:sighting).permit(:day, :latitude, :longitude)
     end
 
-    def send_message(phone_number, alert_message)
-      account_sid = ENV['TWILIO_ACCOUNT_SID']
-      auth_token = ENV['TWILIO_AUTH_TOKEN']
+    # def send_message(phone_number, alert_message)
+    #   account_sid = ENV['TWILIO_ACCOUNT_SID']
+    #   auth_token = ENV['TWILIO_AUTH_TOKEN']
 
-      # set up a client to talk to the Twilio REST API
-      @client = Twilio::REST::Client.new account_sid, auth_token
+    #   # set up a client to talk to the Twilio REST API
+    #   @client = Twilio::REST::Client.new account_sid, auth_token
 
-      @twilio_number = ENV['TWILIO_NUMBER']
-      @client.account.messages.create({
-      	:from => @twilio_number,
-      	:to => phone_number,
-      	:body => alert_message
-      });
-    end
+    #   @twilio_number = ENV['TWILIO_NUMBER']
+    #   @client.account.messages.create({
+    #   	:from => @twilio_number,
+    #   	:to => phone_number,
+    #   	:body => alert_message
+    #   });
+    # end
 
 end

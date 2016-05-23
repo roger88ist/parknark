@@ -14,12 +14,12 @@
   <div id="storefront">
     <div id="signimage">
       <div id="siteform">
-        <% if notice || alert %>
-        <div class="disappear">
-          <p id="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-        <% end %>
+        <%# if notice || alert %>
+        <!-- <div class="disappear">
+          <p id="notice"><%#= notice %></p>
+          <p class="alert"><%#= alert %></p>
+        </div> -->
+        <%# end %>
         <% if user_signed_in? %>
           <div class="sign-out">
             <%= link_to("Sign OUT", destroy_user_session_path, :method => :delete) %>
