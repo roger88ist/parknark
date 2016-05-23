@@ -1,4 +1,5 @@
 <%= include_gon %>         
+<img class="fix" src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="82%" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block">
 <div class="container-il">
 	<div class="top-tab">
 		<p>YOUR CURRENT SCOPE</p>
@@ -8,11 +9,13 @@
 
 <% if @interest_locations.length == 0 %>
 	<div class="empty">
-		<%= link_to 'Click to Add an Area', new_interest_location_path %>
+		<%#= link_to 'Click to Add an Area', new_interest_location_path %>
+		<p>Click Add To Start</p>
+		<p>Receiving Notifications</p>
 	</div>
-	<div class="link-to-profile">
-		<%= link_to "HOME", sightings_path %>
-	</div>
+<!-- 	<div class="link-to-profile">
+		<%#= link_to "HOME", sightings_path %>
+	</div> -->
 <% else %>
 	<div class="scroll">
 		<div class="space"></div>
@@ -28,11 +31,14 @@
 		<div class="space"></div>
 		<% end %>
 	</div>
-	<div class="link-to-profile">
-		<%= link_to "HOME", sightings_path %>
-	</div>
-	<div class="add-il">
-		<%= link_to 'ADD', new_interest_location_path %>
-	</div>
+<!-- 	<div class="link-to-profile">
+		<%#= link_to "HOME", sightings_path %>
+	</div> -->
 <% end %>
+<div class="link-to-profile">
+	<%= link_to "HOME", sightings_path %>
+</div>
+<div class="add-il">
+	<%= link_to 'ADD', new_interest_location_path %>
+</div>
 

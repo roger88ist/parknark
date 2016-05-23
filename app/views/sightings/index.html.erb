@@ -1,4 +1,5 @@
 <%= include_gon %>
+<img class="fix" src=" /assets/ParkNarkCenter.png "alt="Smiley face"  height="81px" width="82%" onmouseover="this.src=' /assets/ParkNarkRight.gif '" onmouseout="this.src=' /assets/ParkNarkCenter.png '"class="img-responsive center-block">
 <input value="markers" type="hidden" id="page_id" /> 
 <div class="container">
   <div class="top-tab">
@@ -11,21 +12,21 @@
 
   <div class="sightings-b-l">
     <div class="link">
-      <p><%= link_to 'Report a Sighting', new_sighting_path %></p>
+      <p><%= link_to 'NOTIFY OTHERS', new_sighting_path %></p>
     </div>
-    <div class="footer">
+<!--     <div class="footer">
       <p>TO SEND ALERTS</p>
-    </div>
+    </div> -->
   </div>
 
 
   <div class="sightings-b-r">
     <div class="link">
-      <p><%= link_to 'Pin My Location', interest_locations_path %></p>
+      <p><%= link_to 'NOTIFY ME', interest_locations_path %></p>
     </div>
-    <div class="footer">
+<!--     <div class="footer">
       <p>TO RECEIVE ALERTS</p>
-    </div>
+    </div> -->
   </div>
 
 </div>

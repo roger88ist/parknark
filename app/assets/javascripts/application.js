@@ -76,7 +76,7 @@ function initMap() {
         fillOpacity: 0.35,
         map: map,
         center: final[idx],
-        radius: 300,
+        radius: 402,
       });
     }
   } else {

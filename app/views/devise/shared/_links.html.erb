@@ -1,9 +1,11 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <div class="li-su">
+    <%= link_to "Log in", new_session_path(resource_name) %><br />
+  </div>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <div class="signin-signup">
+  <div class="signin-signup" id="singup-fyp">
     <%= link_to "SIGN UP", new_registration_path(resource_name) %><br />
   </div>
 <% end -%>
