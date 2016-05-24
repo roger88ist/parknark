@@ -118,8 +118,8 @@ div.signin-bottom-l div:nth-child(4) {
 }
 
 #submit-main-page input {
-	border: none;
-    background: white;
+	border: none !important;
+    background: white !important; 
     font-size: 20px;
 }
 
@@ -387,7 +387,7 @@ div.signin-bottom {
 		font-size: 8px;
 	}
 	#map {
-		border: 2px solid #730001;
+		border: 2px solid black;
 		border-radius: 10px;
 		width: 80%;
 		height: 40vh;
