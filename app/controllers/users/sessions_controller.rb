@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    @all = Sighting.all
+    @all = Sighting.where('created_at >= ?', (Time.now - 28800))
     gon.array_of_cor = @all.map do |element|
       [element.latitude, element.longitude]
     end

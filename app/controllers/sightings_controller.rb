@@ -5,7 +5,7 @@ class SightingsController < ApplicationController
   # GET /sightings
   # GET /sightings.json
   def index
-    @sightings = current_user.sightings
+    @sightings = Sighting.where('created_at >= ?', (Time.now - 28800))
     gon.array_of_cor = Sighting.get_cordinates(@sightings)
     # @gon = gon.array_of_cor
   end
