@@ -97,7 +97,7 @@ class Sighting < ActiveRecord::Base
 				client.account.messages.create({
 					:from => from,
 					:to => format_phone_number(recepient.phone),
-					:body => "Hello from ParkNark. Ticket maid has been spotted in your area of interest. Happy Parking!"
+					:body => "Hello from ParkNark. Ticket maid has been spotted near you. Happy Parking!"
 					})
 				puts "Sent message to #{recepient.email}"
 			end
